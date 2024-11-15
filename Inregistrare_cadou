@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuRo-Star-PVE/PVP - Cadou de Bun Venit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: #ffffff;
+        }
+        h1 { color: #ff4500; }
+        button {
+            background-color: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff6347;
+        }
+        #code-display {
+            display: none;
+            margin-top: 20px;
+            color: #00ff7f;
+            font-size: 18px;
+            border: 1px dashed #00ff7f;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bine ai venit pe serverul EuRo-Star-PVE/PVP!</h1>
+    <p>Înregistrează-te pentru a primi 3 Supply Drops și acces la comanda <strong>/minicopter</strong>.</p>
+    <button onclick="generateCode()">Generează Codul</button>
+    <div id="code-display">
+        <p>Codul tău unic este:</p>
+        <p id="unique-code" style="font-size: 20px; font-weight: bold;"></p>
+        <p>Folosește comanda <strong>/redeem [cod]</strong> pe server EuRo-Star-PVE/PVP pentru a revendica cadoul!</p>
+    </div>
+
+    <script>
+        function generateCode() {
+            // Generare cod unic (simplu, pe baza unui timestamp)
+            const code = 'EURO-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+            document.getElementById('unique-code').textContent = code;
+            document.getElementById('code-display').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
